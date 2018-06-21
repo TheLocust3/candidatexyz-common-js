@@ -28,18 +28,20 @@ import * as MessageApi from './api/message-api';
 import * as StaffApi from './api/staff-api';
 import * as VolunteersApi from './api/volunteer-api';
 
-exports.AuthApi = AuthApi;
-exports.CampaignApi = CampaignApi;
-exports.ContactApi = ContactApi;
-exports.MailApi = MailApi;
-exports.MessageApi = MessageApi;
-exports.StaffApi = StaffApi;
-exports.VolunteersApi = VolunteersApi;
+module.exports = {}
+
+module.exports.AuthApi = AuthApi;
+module.exports.CampaignApi = CampaignApi;
+module.exports.ContactApi = ContactApi;
+module.exports.MailApi = MailApi;
+module.exports.MessageApi = MessageApi;
+module.exports.StaffApi = StaffApi;
+module.exports.VolunteersApi = VolunteersApi;
 
 export let campaignId = '';
 export function setCampaignId(id) {
     campaignId = id;
 }
 
-exports.campaignId = campaignId;
-exports.setCampaignId = setCampaignId;
+module.exports.campaignId = campaignId;
+module.exports.setCampaignId = setCampaignId;
