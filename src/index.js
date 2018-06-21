@@ -38,3 +38,27 @@ export let campaignId = '';
 export function setCampaignId(id) {
     campaignId = id;
 }
+
+import * as ActionsCampaign from './actions/campaign-actions';
+import * as ActionsMessage from './actions/message-actions';
+import * as ActionsStaff from './actions/staff-actions';
+import * as ActionsContact from './actions/contact-actions';
+import * as ActionsVolunteer from './actions/volunteer-actions';
+
+export let CampaignActions = ActionsCampaign;
+export let MessageActions = ActionsMessage;
+export let StaffActions = ActionsStaff;
+export let ContactActions = ActionsContact;
+export let VolunteerActions = ActionsVolunteer;
+
+import { staffReducer } from './reducers/staff-reducer';
+import { campaignReducer } from './reducers/campaign-reducer';
+import { contactReducer } from './reducers/contact-reducer';
+import { volunteerReducer } from './reducers/volunteer-reducer';
+import { messageReducer } from './reducers/message-reducer';
+
+export let staffReducer = staffReducer;
+export let campaignReducer = campaignReducer;
+export let contactReducer = contactReducer;
+export let volunteerReducer = volunteerReducer;
+export let messageReducer = messageReducer;
