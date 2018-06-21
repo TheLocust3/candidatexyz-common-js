@@ -32,7 +32,7 @@ export let ContactApi = ApiContact;
 export let MailApi = ApiMail;
 export let MessageApi = ApiMessage;
 export let StaffApi = ApiStaff;
-export let VolunteersApi = ApiVolunteer;
+export let VolunteerApi = ApiVolunteer;
 
 export let campaignId = '';
 export function setCampaignId(id) {
