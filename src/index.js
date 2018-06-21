@@ -18,13 +18,13 @@ $.auth.configure({
 });
 
 // not a very big fan of this import/export naming thing
-import ApiAuth from 'api/auth-api';
-import ApiCampaign from 'api/campaign-api';
-import ApiContact from 'api/contact-api';
-import ApiMail from 'api/mail-api';
-import ApiMessage from 'api/message-api';
-import ApiStaff from 'api/staff-api';
-import ApiVolunteer from 'api/volunteer-api';
+import ApiAuth from './api/auth-api';
+import ApiCampaign from './api/campaign-api';
+import ApiContact from './api/contact-api';
+import ApiMail from './api/mail-api';
+import ApiMessage from './api/message-api';
+import ApiStaff from './api/staff-api';
+import ApiVolunteer from './api/volunteer-api';
 
 export let AuthApi = ApiAuth;
 export let CampaignApi = ApiCampaign;
