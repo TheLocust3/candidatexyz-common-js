@@ -2,7 +2,7 @@ import 'babel-polyfill';
 import $ from 'jquery';
 import * as Auth from 'j-toker';
 
-import { USER_API_DOMAIN, DOMAIN } from './constants';
+import { userApiDomain, DOMAIN } from './constants';
 
 $.ajaxSetup({
     beforeSend: function(xhr, settings) {
@@ -11,11 +11,28 @@ $.ajaxSetup({
 });
 
 $.auth.configure({
-    apiUrl: USER_API_DOMAIN,
+    apiUrl: userApiDomain(),
     passwordResetSuccessUrl: () => { return `${DOMAIN}/reset_password` },
     storage: 'cookies',
     cookieExpiry: 14
 });
+
+export let campaignId = '';
+export function setCampaignId(id) {
+    campaignId = id;
+}
+
+export let developmentRoutes = false;
+export function setDevelopmentRoutes(development) {
+    developmentRoutes = development;
+
+    $.auth.configure({ // update apiUrl
+        apiUrl: userApiDomain(),
+        passwordResetSuccessUrl: () => { return `${DOMAIN}/reset_password` },
+        storage: 'cookies',
+        cookieExpiry: 14
+    });
+}
 
 // not a very big fan of this import/export naming thing
 import ApiAuth from './api/auth-api';
@@ -33,11 +50,6 @@ export let MailApi = ApiMail;
 export let MessageApi = ApiMessage;
 export let StaffApi = ApiStaff;
 export let VolunteerApi = ApiVolunteer;
-
-export let campaignId = '';
-export function setCampaignId(id) {
-    campaignId = id;
-}
 
 import * as ActionsCampaign from './actions/campaign-actions';
 import * as ActionsMessage from './actions/message-actions';

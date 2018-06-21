@@ -1,4 +1,4 @@
-import { DOMAIN } from '../constants';
+import { websiteDomain } from '../constants';
 import { volunteerApi } from '../helpers';
 
 let MailApi = {
@@ -11,7 +11,7 @@ let MailApi = {
                 <center>
                     Reading Democratic Committee<br /><br />
 
-                    If you believe you received this message in error or wish to no longer receive email from us, please <a href='${DOMAIN}/unsubscribe/[TOKEN]'>unsubscribe</a>.
+                    If you believe you received this message in error or wish to no longer receive email from us, please <a href='${websiteDomain()}/unsubscribe/[TOKEN]'>unsubscribe</a>.
                 </center>
             </div>
         `;

@@ -2,13 +2,13 @@ import $ from 'jquery';
 import _ from 'lodash';
 
 import { campaignId } from './index';
-import { VOLUNTEER_API_DOMAIN, USER_API_DOMAIN } from './constants';
+import { volunteerApiDomain, userApiDomain } from './constants';
 
 export function volunteerApi(url, hash) {
     let { data, ...otherPart } = hash;
     data = { ...data, campaign_id: campaignId }
 
-    return $.ajax(`${VOLUNTEER_API_DOMAIN}${url}`, {
+    return $.ajax(`${volunteerApiDomain()}${url}`, {
         beforeSend: (xhr, settings) => {
             addAuthHeaders(xhr);
         },
@@ -18,7 +18,7 @@ export function volunteerApi(url, hash) {
 }
 
 export function userApi(url, hash) {
-    return $.ajax(`${USER_API_DOMAIN}${url}`, {
+    return $.ajax(`${userApiDomain()}${url}`, {
         beforeSend: (xhr, settings) => {
             addAuthHeaders(xhr);
         },
