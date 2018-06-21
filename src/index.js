@@ -42,6 +42,7 @@ export let ContactApi = ApiContact;
 export let MailApi = ApiMail;
 export let MessageApi = ApiMessage;
 export let StaffApi = ApiStaff;
+export let UserApi = ApiStaff; // call it whatever you want, I don't care
 export let VolunteerApi = ApiVolunteer;
 
 import * as ActionsCampaign from './actions/campaign-actions';
@@ -53,6 +54,7 @@ import * as ActionsVolunteer from './actions/volunteer-actions';
 export let CampaignActions = ActionsCampaign;
 export let MessageActions = ActionsMessage;
 export let StaffActions = ActionsStaff;
+export let UserActions = ActionsStaff; // call it whatever you want, I don't care
 export let ContactActions = ActionsContact;
 export let VolunteerActions = ActionsVolunteer;
 
@@ -63,6 +65,7 @@ import * as VolunteerReducer from './reducers/volunteer-reducer';
 import * as MessageReducer from './reducers/message-reducer';
 
 export let staffReducer = StaffReducers.staffReducer;
+export let userReducer = StaffReducers.staffReducer; // call it whatever you want, I don't care
 export let campaignReducer = CampaignReducer.campaignReducer;
 export let contactReducer = ContactReducer.contactReducer;
 export let volunteerReducer = VolunteerReducer.volunteerReducer;
