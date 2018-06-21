@@ -21,7 +21,7 @@ $.auth.configure({
 import ApiAuth from 'api/auth-api';
 import ApiCampaign from 'api/campaign-api';
 import ApiContact from 'api/contact-api';
-import ApiMail from 'api/content-api';
+import ApiMail from 'api/mail-api';
 import ApiMessage from 'api/message-api';
 import ApiStaff from 'api/staff-api';
 import ApiVolunteer from 'api/volunteer-api';
