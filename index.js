@@ -20,23 +20,26 @@ $.auth.configure({
     cookieExpiry: 14
 });
 
-import * as Auth from './api/auth-api';
-import * as Campaign from './api/campaign-api';
-import * as Contact from './api/contact-api';
-import * as Mail from './api/content-api';
-import * as Message from './api/message-api';
-import * as Staff from './api/staff-api';
-import * as Volunteer from './api/volunteer-api';
+import * as AuthApi from './api/auth-api';
+import * as CampaignApi from './api/campaign-api';
+import * as ContactApi from './api/contact-api';
+import * as MailApi from './api/content-api';
+import * as MessageApi from './api/message-api';
+import * as StaffApi from './api/staff-api';
+import * as VolunteersApi from './api/volunteer-api';
 
-export let AuthApi = Auth;
-export let CampaignApi = Campaign;
-export let ContactApi = Contact;
-export let MailApi = Mail;
-export let MessageApi = Message;
-export let StaffApi = Staff;
-export let VolunteersApi = Volunteer;
+exports.AuthApi = AuthApi;
+exports.CampaignApi = CampaignApi;
+exports.ContactApi = ContactApi;
+exports.MailApi = MailApi;
+exports.MessageApi = MessageApi;
+exports.StaffApi = StaffApi;
+exports.VolunteersApi = VolunteersApi;
 
 export let campaignId = '';
 export function setCampaignId(id) {
     campaignId = id;
 }
+
+exports.campaignId = campaignId;
+exports.setCampaignId = setCampaignId;
