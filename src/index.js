@@ -10,21 +10,14 @@ $.ajaxSetup({
     }
 });
 
-$.auth.configure({
-    apiUrl: userApiDomain(),
-    passwordResetSuccessUrl: () => { return `${DOMAIN}/reset_password` },
-    storage: 'cookies',
-    cookieExpiry: 14
-});
-
 export let campaignId = '';
 export function setCampaignId(id) {
     campaignId = id;
 }
 
 export let developmentRoutes = false;
-export function setDevelopmentRoutes(development) {
-    developmentRoutes = development;
+export function configure(options) {
+    developmentRoutes = options.developmentRoutes;
 
     $.auth.configure({ // update apiUrl
         apiUrl: userApiDomain(),
