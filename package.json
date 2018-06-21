@@ -1,0 +1,15 @@
+{
+  "name": "candidatexyz-common-js",
+  "version": "1.0.0",
+  "description": "candidateXYZ common js files",
+  "main": "index.js",
+  "author": "candidateXYZ, LLC",
+  "license": "None",
+  "private": true,
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "j-toker": "^0.0.10-beta3",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.10"
+  }
+}
