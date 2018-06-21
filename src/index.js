@@ -51,14 +51,14 @@ export let StaffActions = ActionsStaff;
 export let ContactActions = ActionsContact;
 export let VolunteerActions = ActionsVolunteer;
 
-import { staffReducer } from './reducers/staff-reducer';
-import { campaignReducer } from './reducers/campaign-reducer';
-import { contactReducer } from './reducers/contact-reducer';
-import { volunteerReducer } from './reducers/volunteer-reducer';
-import { messageReducer } from './reducers/message-reducer';
+import * as StaffReducers from './reducers/staff-reducer';
+import * as CampaignReducer from './reducers/campaign-reducer';
+import * as ContactReducer from './reducers/contact-reducer';
+import * as VolunteerReducer from './reducers/volunteer-reducer';
+import * as MessageReducer from './reducers/message-reducer';
 
-export let staffReducer = staffReducer;
-export let campaignReducer = campaignReducer;
-export let contactReducer = contactReducer;
-export let volunteerReducer = volunteerReducer;
-export let messageReducer = messageReducer;
+export let staffReducer = StaffReducers.staffReducer;
+export let campaignReducer = CampaignReducer.campaignReducer;
+export let contactReducer = ContactReducer.contactReducer;
+export let volunteerReducer = VolunteerReducer.volunteerReducer;
+export let messageReducer = MessageReducer.messageReducer;
