@@ -26,7 +26,7 @@ export function userApi(url, hash) {
     });
 }
 
-function addAuthHeaders(xhr) { // attach authentication headers to request, modified from https://github.com/lynndylanhurley/j-toker/blob/0f76481813c6a20642de0756c5077da338ac4a0b/src/j-toker.js#L1172
+export function addAuthHeaders(xhr) { // attach authentication headers to request, modified from https://github.com/lynndylanhurley/j-toker/blob/0f76481813c6a20642de0756c5077da338ac4a0b/src/j-toker.js#L1172
     let currentHeaders = $.auth.retrieveData('authHeaders');
     if (_.isUndefined(currentHeaders)) {
         return;

@@ -3,6 +3,7 @@ import $ from 'jquery';
 import * as Auth from 'j-toker';
 
 import { userApiDomain, DOMAIN } from './constants';
+import { addAuthHeaders } from './helpers';
 
 $.ajaxSetup({
     beforeSend: function(xhr, settings) {
@@ -14,6 +15,8 @@ export let campaignId = '';
 export function setCampaignId(id) {
     campaignId = id;
 }
+
+export let addJTokerHeaders = addAuthHeaders;
 
 export let developmentRoutes = false;
 export function configure(options) {
