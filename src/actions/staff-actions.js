@@ -76,6 +76,8 @@ export function fetchCurrentUser() {
 
         AuthApi.getCurrentUser().then( data => {
             dispatch(receiveCurrentUser(data));
+        }).catch(() => {
+            dispatch(receiveCurrentUser({}));
         });
     }
 }
