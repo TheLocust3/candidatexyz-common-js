@@ -16,7 +16,17 @@ export function receiveCampaign(data) {
     }
 }
 
-export function fetchCampaign(name) {
+export function fetchCampaign(id) {
+    return function (dispatch) {
+        dispatch(requestCampaign());
+
+        CampaignApi.get(id).then( data => {
+            dispatch(receiveCampaign(data));
+        });
+    }
+}
+
+export function fetchCampaignByName(name) {
 
     return function (dispatch) {
         dispatch(requestCampaign());
