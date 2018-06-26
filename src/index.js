@@ -37,7 +37,7 @@ import ApiContact from './api/contact-api';
 import ApiMail from './api/mail-api';
 import ApiMessage from './api/message-api';
 import ApiStaff from './api/staff-api';
-import ApiVolunteer from './api/volunteer-api';
+import ApiAnalyticEntry from './api/analytic-entry-api';
 
 export let AuthApi = ApiAuth;
 export let CampaignApi = ApiCampaign;
@@ -47,6 +47,7 @@ export let MessageApi = ApiMessage;
 export let StaffApi = ApiStaff;
 export let UserApi = ApiStaff; // call it whatever you want, I don't care
 export let VolunteerApi = ApiVolunteer;
+export let AnalyticEntryApi = ApiAnalyticEntry;
 
 import * as ActionsCampaign from './actions/campaign-actions';
 import * as ActionsMessage from './actions/message-actions';
