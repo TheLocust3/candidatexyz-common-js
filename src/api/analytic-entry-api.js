@@ -25,8 +25,9 @@ let AnalyticEntryApi = {
     },
 
     pageView() {
-        // TODO: This address also randomly responds with 'Impeach Trump' and other stuff
-        return volunteerApi('/ip', (response) => {
+        return volunteerApi('/ip', {
+            type: 'get'
+        }).then((response) => {
             return this.create(response.ip, { type: 'VIEW' });
         });
     },
