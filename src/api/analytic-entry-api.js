@@ -26,7 +26,7 @@ let AnalyticEntryApi = {
 
     pageView() {
         // TODO: This address also randomly responds with 'Impeach Trump' and other stuff
-        return $.getJSON('http://jsonip.com/', (response) => {
+        return $.get('http://jsonip.com/?callback=?', (response) => {
             return this.create(response.ip, { type: 'VIEW' });
         });
     },
