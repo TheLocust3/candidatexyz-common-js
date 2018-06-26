@@ -25,27 +25,28 @@ let AnalyticEntryApi = {
     },
 
     pageView() {
-        return $.get('http://ipinfo.io', (response) => {
-            return this.create({ type: 'VIEW', ip: response.ip });
+        // TODO: This address also randomly responds with 'Impeach Trump' and other stuff
+        return $.get('http://jsonip.com/', (response) => {
+            return this.create(response.ip, { type: 'VIEW' });
         });
     },
 
-    create(payload) {
+    create(ip, payload) {
         return new Promise((resolve, reject) => {
             volunteerApi('/analytic_entries', {
                 type: 'post',
-                data: { payload: payload },
+                data: { ip: ip, payload: payload },
                 success: resolve,
                 error: reject
             });
         });
     },
 
-    update(id, payload) {
+    update(id, ip, payload) {
         return new Promise((resolve, reject) => {
             volunteerApi(`/analytic_entries/${id}`, {
                 type: 'patch',
-                data: { payload: payload },
+                data: { ip: ip, payload: payload },
                 success: resolve,
                 error: reject
             });
