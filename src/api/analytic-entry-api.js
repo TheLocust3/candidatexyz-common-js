@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 import { volunteerApi } from '../helpers';
 
 let AnalyticEntryApi = {
