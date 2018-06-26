@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 import { volunteerApi } from '../helpers';
 
 let AnalyticEntryApi = {
@@ -25,6 +23,9 @@ let AnalyticEntryApi = {
     },
 
     pageView() {
+        if (window.sessionStorage.getItem('viewed?')) return;
+        window.sessionStorage.setItem('viewed?', true);
+
         return volunteerApi('/ip', {
             type: 'get'
         }).then((response) => {
