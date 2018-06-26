@@ -50,11 +50,13 @@ export let UserApi = ApiStaff; // call it whatever you want, I don't care
 export let VolunteerApi = ApiVolunteer;
 export let AnalyticEntryApi = ApiAnalyticEntry;
 
+
 import * as ActionsCampaign from './actions/campaign-actions';
 import * as ActionsMessage from './actions/message-actions';
 import * as ActionsStaff from './actions/staff-actions';
 import * as ActionsContact from './actions/contact-actions';
 import * as ActionsVolunteer from './actions/volunteer-actions';
+import * as ActionsAnalyticEntry from './actions/analytic-entry-actions';
 
 export let CampaignActions = ActionsCampaign;
 export let MessageActions = ActionsMessage;
@@ -62,12 +64,15 @@ export let StaffActions = ActionsStaff;
 export let UserActions = ActionsStaff; // call it whatever you want, I don't care
 export let ContactActions = ActionsContact;
 export let VolunteerActions = ActionsVolunteer;
+export let AnalyticEntryActions = ActionsAnalyticEntry;
+
 
 import * as StaffReducers from './reducers/staff-reducer';
 import * as CampaignReducer from './reducers/campaign-reducer';
 import * as ContactReducer from './reducers/contact-reducer';
 import * as VolunteerReducer from './reducers/volunteer-reducer';
 import * as MessageReducer from './reducers/message-reducer';
+import * as AnalyticEntryReducer from './reducers/analytic-entry-reducer';
 
 export let staffReducer = StaffReducers.staffReducer;
 export let userReducer = StaffReducers.staffReducer; // call it whatever you want, I don't care
@@ -75,3 +80,4 @@ export let campaignReducer = CampaignReducer.campaignReducer;
 export let contactReducer = ContactReducer.contactReducer;
 export let volunteerReducer = VolunteerReducer.volunteerReducer;
 export let messageReducer = MessageReducer.messageReducer;
+export let analyticEntryReducer = AnalyticEntryReducer.analyticEntryReducer;
