@@ -22,6 +22,12 @@ let AnalyticEntryApi = {
         });
     },
 
+    pageView() {
+        return $.get('http://ipinfo.io', (response) => {
+            return create({ type: 'VIEW', ip: response.ip });
+        });
+    },
+
     create(payload) {
         return new Promise((resolve, reject) => {
             volunteerApi('/analytic_entries', {
