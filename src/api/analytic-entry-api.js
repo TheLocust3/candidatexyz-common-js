@@ -23,8 +23,8 @@ let AnalyticEntryApi = {
     },
 
     pageView() {
-        if (window.sessionStorage.getItem('viewed?')) return;
-        window.sessionStorage.setItem('viewed?', true);
+        if (window.localStorage.getItem('viewed?')) return;
+        window.localStorage.setItem('viewed?', true);
 
         return volunteerApi('/ip', {
             type: 'get'
