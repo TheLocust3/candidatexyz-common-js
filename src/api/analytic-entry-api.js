@@ -26,7 +26,7 @@ let AnalyticEntryApi = {
 
     pageView() {
         return $.get('http://ipinfo.io', (response) => {
-            return create({ type: 'VIEW', ip: response.ip });
+            return this.create({ type: 'VIEW', ip: response.ip });
         });
     },
 
