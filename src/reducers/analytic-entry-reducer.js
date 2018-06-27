@@ -27,7 +27,7 @@ export function analyticEntryReducer(state = initialState, action) {
             });
         case AnalyticEntriesActions.RECEIVE_AGGREGATE:
             let aggregateEntries = state.aggregateEntries;
-            aggregateEntries[action.by] = action.data;
+            aggregateEntries[action.by] = action.data.analyticEntries;
 
             return Object.assign({}, state, {
                 isReady: true,
