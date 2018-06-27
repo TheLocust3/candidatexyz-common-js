@@ -4,7 +4,7 @@ const initialState = {
     isReady: false,
     analyticEntry: {},
     analyticEntries: { analyticEntries: [] },
-    aggregateEntries: { hour: [], day: [], month: [] }
+    aggregateEntries: { hour: [], day: [], month: [], year: [] }
 };
 
 export function analyticEntryReducer(state = initialState, action) {
