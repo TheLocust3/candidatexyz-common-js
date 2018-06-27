@@ -3,13 +3,15 @@ import * as AnalyticEntriesActions from '../actions/analytic-entry-actions';
 const initialState = {
     isReady: false,
     analyticEntry: {},
-    analyticEntries: { analyticEntries: [] }
+    analyticEntries: { analyticEntries: [] },
+    aggregateEntries: { hour: [], day: [], month: [] }
 };
 
 export function analyticEntryReducer(state = initialState, action) {
     switch (action.type) {
         case AnalyticEntriesActions.REQUEST_ALL_ANALYTIC_ENTRIES:
         case AnalyticEntriesActions.REQUEST_ANALYTIC_ENTRY:
+        case AnalyticEntriesActions.REQUEST_AGGREGATE:
             return Object.assign({}, state, {
                 isReady: false
             });
@@ -22,6 +24,14 @@ export function analyticEntryReducer(state = initialState, action) {
             return Object.assign({}, state, {
                 isReady: true,
                 analyticEntries: action.data
+            });
+        case AnalyticEntriesActions.RECEIVE_AGGREGATE:
+            let aggregateEntries = state.aggregateEntries;
+            aggregateEntries[action.by] = action.data;
+
+            return Object.assign({}, state, {
+                isReady: true,
+                aggregateEntries: aggregateEntries
             });
         default:
             return state;
