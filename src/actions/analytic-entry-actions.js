@@ -42,6 +42,17 @@ export function fetchAllAnalyticEntries() {
     }
 }
 
+export function fetchAggregatedAnalyticEntries(start, end, by) {
+
+    return function (dispatch) {
+        dispatch(requestAllAnalyticEntries());
+
+        AnalyticEntryApi.aggregateBy(start, end, by).then( data => {
+            dispatch(receiveAllAnalyticEntries(data));
+        });
+    }
+}
+
 export function fetchAnalyticEntry(id) {
 
     return function (dispatch) {

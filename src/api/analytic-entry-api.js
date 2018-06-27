@@ -22,6 +22,16 @@ let AnalyticEntryApi = {
         });
     },
 
+    aggregateBy(start, end, by) {
+        return new Promise((resolve, reject) => {
+            volunteerApi(`/analytic_entries/aggregate?start=${start}&end=${end}&by=${by}`, {
+                type: 'get',
+                success: resolve,
+                error: reject
+            });
+        });
+    },
+
     pageView() {
         if (window.sessionStorage.getItem('viewed?') == 'yes') return;
         window.sessionStorage.setItem('viewed?', 'yes');
