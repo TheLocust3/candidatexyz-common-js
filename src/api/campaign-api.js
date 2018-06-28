@@ -20,6 +20,17 @@ let CampaignApi = {
                 error: reject
             });
         });
+    },
+
+    update(id, name) {
+        return new Promise((resolve, reject) => {
+            volunteerApi(`/campaigns/${id}`, {
+                type: 'patch',
+                data: { name: name },
+                success: resolve,
+                error: reject
+            });
+        });
     }
 };
 
