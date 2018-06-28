@@ -40,6 +40,7 @@ import ApiStaff from './api/staff-api';
 import ApiVolunteer from './api/volunteer-api';
 import ApiAnalyticEntry from './api/analytic-entry-api';
 import ApiImage from './api/image-api';
+import ApiUnsubscribe from './api/unsubscribe-api';
 
 export let AuthApi = ApiAuth;
 export let CampaignApi = ApiCampaign;
@@ -51,6 +52,7 @@ export let UserApi = ApiStaff; // call it whatever you want, I don't care
 export let VolunteerApi = ApiVolunteer;
 export let AnalyticEntryApi = ApiAnalyticEntry;
 export let ImageApi = ApiImage;
+export let UnsubscribeApi = ApiUnsubscribe;
 
 
 import * as ActionsCampaign from './actions/campaign-actions';
