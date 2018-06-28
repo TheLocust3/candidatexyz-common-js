@@ -24,7 +24,7 @@ let CampaignApi = {
 
     update(id, name) {
         return new Promise((resolve, reject) => {
-            volunteerApi(`/campaigns/${id}`, {
+            userApi(`/campaigns/${id}`, {
                 type: 'patch',
                 data: { name: name },
                 success: resolve,
