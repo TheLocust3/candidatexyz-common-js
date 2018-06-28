@@ -34,7 +34,7 @@ export function analyticEntryReducer(state = initialState, action) {
             });
         case AnalyticEntriesActions.RECEIVE_AGGREGATE:
             let aggregateEntries = state.aggregateEntries;
-            let isAggregateReady = state.isAggregateReady;
+            isAggregateReady = state.isAggregateReady;
             aggregateEntries[action.by] = action.data.analyticEntries;
             isAggregateReady[action.by] = true;
 
