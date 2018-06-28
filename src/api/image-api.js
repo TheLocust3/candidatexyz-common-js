@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { volunteerApi } from '../helpers';
+import {  uuid, volunteerApi } from '../helpers';
 
 let ImageApi = {
 
