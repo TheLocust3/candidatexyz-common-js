@@ -2,7 +2,7 @@ import $ from 'jquery';
 import _ from 'lodash';
 
 import { campaignId } from './index';
-import { volunteerApiDomain, userApiDomain } from './constants';
+import { volunteerApiDomain, userApiDomain, mailerApiDomain } from './constants';
 
 // Stolen from https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
 export function uuid() {
@@ -26,6 +26,15 @@ export function volunteerApi(url, hash) {
 
 export function userApi(url, hash) {
     return $.ajax(`${userApiDomain()}${url}`, {
+        beforeSend: (xhr, settings) => {
+            addAuthHeaders(xhr);
+        },
+        ...hash
+    });
+}
+
+export function mailerApi(url, hash) {
+    return $.ajax(`${mailerApiDomain()}${url}`, {
         beforeSend: (xhr, settings) => {
             addAuthHeaders(xhr);
         },
