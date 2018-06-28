@@ -39,6 +39,7 @@ import ApiMessage from './api/message-api';
 import ApiStaff from './api/staff-api';
 import ApiVolunteer from './api/volunteer-api';
 import ApiAnalyticEntry from './api/analytic-entry-api';
+import ApiImage from './api/image-api';
 
 export let AuthApi = ApiAuth;
 export let CampaignApi = ApiCampaign;
@@ -49,6 +50,7 @@ export let StaffApi = ApiStaff;
 export let UserApi = ApiStaff; // call it whatever you want, I don't care
 export let VolunteerApi = ApiVolunteer;
 export let AnalyticEntryApi = ApiAnalyticEntry;
+export let ImageApi = ApiImage;
 
 
 import * as ActionsCampaign from './actions/campaign-actions';
@@ -57,6 +59,7 @@ import * as ActionsStaff from './actions/staff-actions';
 import * as ActionsContact from './actions/contact-actions';
 import * as ActionsVolunteer from './actions/volunteer-actions';
 import * as ActionsAnalyticEntry from './actions/analytic-entry-actions';
+import * as ActionsImage from './actions/image-actions';
 
 export let CampaignActions = ActionsCampaign;
 export let MessageActions = ActionsMessage;
@@ -65,6 +68,7 @@ export let UserActions = ActionsStaff; // call it whatever you want, I don't car
 export let ContactActions = ActionsContact;
 export let VolunteerActions = ActionsVolunteer;
 export let AnalyticEntryActions = ActionsAnalyticEntry;
+export let ImageActions = ActionsImage;
 
 
 import * as StaffReducers from './reducers/staff-reducer';
@@ -73,6 +77,7 @@ import * as ContactReducer from './reducers/contact-reducer';
 import * as VolunteerReducer from './reducers/volunteer-reducer';
 import * as MessageReducer from './reducers/message-reducer';
 import * as AnalyticEntryReducer from './reducers/analytic-entry-reducer';
+import * as ImageReducer from './reducers/image-reducer';
 
 export let staffReducer = StaffReducers.staffReducer;
 export let userReducer = StaffReducers.staffReducer; // call it whatever you want, I don't care
@@ -81,3 +86,4 @@ export let contactReducer = ContactReducer.contactReducer;
 export let volunteerReducer = VolunteerReducer.volunteerReducer;
 export let messageReducer = MessageReducer.messageReducer;
 export let analyticEntryReducer = AnalyticEntryReducer.analyticEntryReducer;
+export let imageReducer = ImageReducer.imageReducer;
