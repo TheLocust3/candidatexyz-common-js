@@ -33,9 +33,10 @@ export function receiveAllAnalyticEntries(data) {
     }
 }
 
-export function requestAggregate() {
+export function requestAggregate(by) {
     return {
-        type: REQUEST_AGGREGATE
+        type: REQUEST_AGGREGATE,
+        by: by
     }
 }
 
@@ -61,7 +62,7 @@ export function fetchAllAnalyticEntries() {
 export function fetchAggregatedAnalyticEntries(start, end, by) {
 
     return function (dispatch) {
-        dispatch(requestAggregate());
+        dispatch(requestAggregate(by));
 
         AnalyticEntryApi.aggregateBy(start, end, by).then( data => {
             dispatch(receiveAggregate(by, data));
