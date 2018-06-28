@@ -1,4 +1,3 @@
-import { websiteDomain } from '../constants';
 import { volunteerApi, mailerApi } from '../helpers';
 
 let MailApi = {
