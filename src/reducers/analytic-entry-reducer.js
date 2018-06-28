@@ -16,7 +16,7 @@ export function analyticEntryReducer(state = initialState, action) {
                 isReady: false
             });
         case AnalyticEntriesActions.REQUEST_AGGREGATE:
-            let isAggregateReady = state.isAggregateReady;
+            let isAggregateReady = { hour: state.isAggregateReady.hour, day: state.isAggregateReady.day, month: state.isAggregateReady.month, year: state.isAggregateReady.year };
             isAggregateReady[action.by] = false;
 
             return Object.assign({}, state, {
@@ -34,8 +34,9 @@ export function analyticEntryReducer(state = initialState, action) {
             });
         case AnalyticEntriesActions.RECEIVE_AGGREGATE:
             let aggregateEntries = state.aggregateEntries;
-            isAggregateReady = state.isAggregateReady;
             aggregateEntries[action.by] = action.data.analyticEntries;
+
+            isAggregateReady = { hour: state.isAggregateReady.hour, day: state.isAggregateReady.day, month: state.isAggregateReady.month, year: state.isAggregateReady.year };;
             isAggregateReady[action.by] = true;
 
             return Object.assign({}, state, {
