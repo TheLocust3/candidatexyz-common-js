@@ -22,11 +22,11 @@ let CampaignApi = {
         });
     },
 
-    update(id, name) {
+    update(id, name, url) {
         return new Promise((resolve, reject) => {
             userApi(`/campaigns/${id}`, {
                 type: 'patch',
-                data: { name: name },
+                data: { name: name, url: url },
                 success: resolve,
                 error: reject
             });
