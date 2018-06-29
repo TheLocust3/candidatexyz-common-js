@@ -1,5 +1,9 @@
 import { developmentRoutes } from './index';
 
+export function appDomain() {
+    return developmentRoutes ? 'http://127.0.0.1:3000' : 'https://app.candidatexyz.com';
+}
+
 export function websiteDomain() {
     return developmentRoutes ? 'http://127.0.0.1:3001' : 'https://demo.candidatexyz.com';
 }
