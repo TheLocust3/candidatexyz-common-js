@@ -7,7 +7,7 @@
   "license": "None",
   "private": true,
   "scripts": {
-    "compile": "babel --presets es2015,stage-0 -d lib/ src/",
+    "compile": "babel --presets react,es2015,stage-0 -d lib/ src/",
     "install": "npm run compile",
     "postinstall": "npm run compile"
   },
@@ -15,6 +15,7 @@
     "babel-cli": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "j-toker": "^0.0.10-beta3",
     "jquery": "^3.3.1",
