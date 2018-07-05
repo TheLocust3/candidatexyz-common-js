@@ -1,4 +1,5 @@
 import ButtonElement from './elements/Button';
+import FabElement from './elements/Fab';
 import CheckboxElement from './elements/Checkbox';
 import FormElement from './elements/Form';
 import SelectElement from './elements/Select';
@@ -9,6 +10,7 @@ import TextEditorElement from './elements/TextEditor';
 import TextFieldElement from './elements/TextField';
 
 export let Button = ButtonElement;
+export let Fab = FabElement;
 export let Checkbox = CheckboxElement;
 export let Form = FormElement;
 export let Select = SelectElement;
