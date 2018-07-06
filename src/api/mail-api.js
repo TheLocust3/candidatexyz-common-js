@@ -23,6 +23,27 @@ let MailApi = {
                 error: reject
             });
         });
+    },
+
+    respondToMessage(email, subject, body) {
+        let fullBody = `
+            ${body}
+
+            <div class='footer'>
+                <center>
+                    Reading Democratic Committee
+                </center>
+            </div>
+        `;
+
+        return new Promise((resolve, reject) => {
+            mailerApi('/campaign', {
+                type: 'post',
+                data: { email: email, subject: subject, body: fullBody },
+                success: resolve,
+                error: reject
+            });
+        });
     }
 };
 
