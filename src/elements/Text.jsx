@@ -10,7 +10,7 @@ class Text extends React.Component {
         className = _.isEmpty(className) ? '' : className;
 
         return (
-            <div className={`mdc-typography mdc-typography--${type} ${className}`} {...props}>
+            <div className={`${className} mdc-typography mdc-typography--${type}`} {...props}>
                 {children}
             </div>
         );
