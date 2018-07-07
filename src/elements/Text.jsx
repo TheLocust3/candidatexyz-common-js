@@ -5,12 +5,13 @@ import PropTypes from 'prop-types';
 class Text extends React.Component {
 
     render() {
-        let { className, type, children, ...props } = this.props;
+        let { className, outerClassName, type, children, ...props } = this.props;
 
         className = _.isEmpty(className) ? '' : className;
+        outerClassName = _.isEmpty(outerClassName) ? '' : outerClassName;
 
         return (
-            <div className={`mdc-typography mdc-typography--${type}`} {...props}>
+            <div className={`mdc-typography mdc-typography--${type} ${outerClassName}`} {...props}>
                 <div className={className}>
                     {children}
                 </div>
@@ -21,6 +22,7 @@ class Text extends React.Component {
 
 Text.propTypes = {
     className: PropTypes.string,
+    outerClassName: PropTypes.string,
     type: PropTypes.string.isRequired,
     children: PropTypes.any,
 };
