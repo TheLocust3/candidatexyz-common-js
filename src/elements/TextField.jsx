@@ -33,9 +33,10 @@ export default class TextField extends React.Component {
     }
 
     render() {
-        let { className, labelClassName, style, label, defaultValue, onChange, required, value, type, size, dense, ...props } = this.props;
+        let { className, textFieldClassName, labelClassName, style, label, defaultValue, onChange, required, value, type, size, dense, ...props } = this.props;
 
         className = _.isEmpty(className) ? '' : className;
+        textFieldClassName = _.isEmpty(textFieldClassName) ? '' : textFieldClassName;
         labelClassName = _.isEmpty(labelClassName) ? '' : labelClassName;
         let denseClassName = dense ? 'mdc-text-field--dense' : '';
 
@@ -43,7 +44,7 @@ export default class TextField extends React.Component {
 
         return (
             <div id={this.state.uuid} className={`mdc-text-field ${denseClassName} textfield ${className}`} data-mdc-auto-init='MDCTextField' style={style}>
-                <input type={type} className='mdc-text-field__input mdc-typography--body2' onChange={onChange} value={value} size={size} required={required} {...props} />
+                <input type={type} className={`mdc-text-field__input mdc-typography--body2 ${textFieldClassName}`} onChange={onChange} value={value} size={size} required={required} {...props} />
                 <label className={`mdc-floating-label mdc-typography--body2 ${labelClassName}`}>{label}</label>
 
                 <div className='mdc-line-ripple' />
@@ -54,6 +55,7 @@ export default class TextField extends React.Component {
 
 TextField.propTypes = {
     className: PropTypes.string,
+    textFieldClassName: PropTypes.string,
     labelClassName: PropTypes.string,
     style: PropTypes.object,
     label: PropTypes.string,
