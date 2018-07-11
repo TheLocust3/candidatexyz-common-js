@@ -1,10 +1,10 @@
 import { volunteerApi } from '../helpers';
 
-let DonorApi = {
+let ReceiptApi = {
 
     getAll() {
         return new Promise((resolve, reject) => {
-            volunteerApi('/donors', {
+            volunteerApi('/receipts', {
                 type: 'get',
                 success: resolve,
                 error: reject
@@ -14,7 +14,7 @@ let DonorApi = {
 
     get(id) {
         return new Promise((resolve, reject) => {
-            volunteerApi(`/donors/${id}`, {
+            volunteerApi(`/receipts/${id}`, {
                 type: 'get',
                 success: resolve,
                 error: reject
@@ -24,7 +24,7 @@ let DonorApi = {
 
     create(name, amount, address, zipcode, city, state, dateReceived, occupation, employer) {
         return new Promise((resolve, reject) => {
-            volunteerApi('/donors', {
+            volunteerApi('/receipts', {
                 type: 'post',
                 data: { name: name, amount: amount, address: address, zipcode: zipcode, city: city, state: state, date_received: dateReceived, occupation: occupation, employer: employer },
                 success: resolve,
@@ -35,7 +35,7 @@ let DonorApi = {
 
     update(id, name, amount, address, zipcode, city, state, dateReceived, occupation, employer) {
         return new Promise((resolve, reject) => {
-            volunteerApi(`/donors/${id}`, {
+            volunteerApi(`/receipts/${id}`, {
                 type: 'patch',
                 data: { name: name, amount: amount, address: address, zipcode: zipcode, city: city, state: state, date_received: dateReceived, occupation: occupation, employer: employer },
                 success: resolve,
@@ -46,7 +46,7 @@ let DonorApi = {
 
     destroy(id) {
         return new Promise((resolve, reject) => {
-            volunteerApi(`/donors/${id}`, {
+            volunteerApi(`/receipts/${id}`, {
                 type: 'delete',
                 success: resolve,
                 error: reject
@@ -55,4 +55,4 @@ let DonorApi = {
     }
 };
 
-export default DonorApi;
+export default ReceiptApi;
