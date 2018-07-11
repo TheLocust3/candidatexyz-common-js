@@ -62,6 +62,12 @@ let AuthApi = {
 
     getCurrentUser() {
         return $.auth.validateToken();
+    },
+
+    setCampaignId(campaignId) {
+        return $.auth.updateAccount({
+            campaign_id: campaignId
+        });
     }
 };
 
