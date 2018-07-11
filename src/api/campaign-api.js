@@ -22,6 +22,16 @@ let CampaignApi = {
         });
     },
 
+    getAll() {
+        return new Promise((resolve, reject) => {
+            userApi('/campaigns/', {
+                type: 'get',
+                success: resolve,
+                error: reject
+            });
+        });
+    },
+
     update(id, name, url) {
         return new Promise((resolve, reject) => {
             userApi(`/campaigns/${id}`, {

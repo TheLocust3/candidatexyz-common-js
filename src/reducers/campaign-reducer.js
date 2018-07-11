@@ -4,11 +4,13 @@ import * as CampaignActions from '../actions/campaign-actions';
 
 const initialState = {
     isReady: false,
-    campaign: {}
+    campaign: {},
+    campaigns: []
 };
 
 export function campaignReducer(state = initialState, action) {
     switch (action.type) {
+        case CampaignActions.REQUEST_ALL_CAMPAIGNS:
         case CampaignActions.REQUEST_CAMPAIGN:
             return Object.assign({}, state, {
                 isReady: false
@@ -19,6 +21,11 @@ export function campaignReducer(state = initialState, action) {
             return Object.assign({}, state, {
                 isReady: true,
                 campaign: action.data
+            });
+        case CampaignActions.RECEIVE_ALL_CAMPAIGNS:
+            return Object.assign({}, state, {
+                isReady: true,
+                campaigns: action.data
             });
         default:
             return state;
