@@ -8,7 +8,6 @@ let DonorHelper = {
 
             let condensedReceipt = _.clone(filteredReceipts[0]);
 
-            delete(condensedReceipt.id);
             delete(condensedReceipt.createdAt);
             delete(condensedReceipt.dateReceived);
             delete(condensedReceipt.amountString);
