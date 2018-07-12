@@ -96,6 +96,6 @@ export let analyticEntryReducer = AnalyticEntryReducer.analyticEntryReducer;
 export let imageReducer = ImageReducer.imageReducer;
 export let receiptReducer = ReceiptReducer.receiptReducer;
 
-import HelperDonor from './helper/donor-helper';
+import HelperDonor from './helpers/donor-helper';
 
 export let DonorHelper = HelperDonor;
