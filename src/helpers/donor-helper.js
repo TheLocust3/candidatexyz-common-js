@@ -18,6 +18,9 @@ let DonorHelper = {
     
                 condensedReceipt.occupation = _.isEmpty(condensedReceipt.occupation) ? receipt.occupation : '';
                 condensedReceipt.employer = _.isEmpty(condensedReceipt.employer) ? receipt.employer : '';
+
+                condensedReceipt.email = _.isEmpty(condensedReceipt.email) ? receipt.email : '';
+                condensedReceipt.phoneNumber = _.isEmpty(condensedReceipt.phoneNumber) ? receipt.phoneNumber : '';
             });
     
             return condensedReceipt;
