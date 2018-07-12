@@ -95,3 +95,7 @@ export let messageReducer = MessageReducer.messageReducer;
 export let analyticEntryReducer = AnalyticEntryReducer.analyticEntryReducer;
 export let imageReducer = ImageReducer.imageReducer;
 export let receiptReducer = ReceiptReducer.receiptReducer;
+
+import HelperDonor from './helper/donor-helper';
+
+export let DonorHelper = HelperDonor;
