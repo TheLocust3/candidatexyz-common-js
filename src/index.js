@@ -105,6 +105,7 @@ export let messageReducer = MessageReducer.messageReducer;
 export let analyticEntryReducer = AnalyticEntryReducer.analyticEntryReducer;
 export let imageReducer = ImageReducer.imageReducer;
 export let receiptReducer = ReceiptReducer.receiptReducer;
+export let expenditureReducer = ExpenditureReducer.expenditureReducer;
 export let inKindReducer = InKindReducer.inKindReducer;
 
 import HelperDonor from './helpers/donor-helper';
