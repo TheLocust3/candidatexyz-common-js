@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 let DonorHelper = {
 
     generateDonors(receipts) {
@@ -21,6 +23,12 @@ let DonorHelper = {
     
             return condensedReceipt;
         });
+    },
+
+    generateDonorsInYear(receipts) {
+        let receiptsInYear = _.filter(receipts, (receipt) => { moment(receipt.dateReceived) > moment().subtract(1, 'year') });
+
+        return this.generateDonors(receiptsInYear);
     }
 };
 
