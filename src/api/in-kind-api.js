@@ -22,22 +22,22 @@ let InKindApi = {
         });
     },
 
-    create(fromWhom, description, address, city, state, country, dateReceived, value) {
+    create(fromWhom, description, address, city, state, country, dateReceived, value, email, phoneNumber) {
         return new Promise((resolve, reject) => {
             volunteerApi('/in_kinds', {
                 type: 'post',
-                data: { from_whome: fromWhom, description: description, address: address, city: city, state: state, country: country, date_received: dateReceived, value: value },
+                data: { from_whom: fromWhom, description: description, address: address, city: city, state: state, country: country, date_received: dateReceived, value: value, email: email, phone_number: phoneNumber },
                 success: resolve,
                 error: reject
             });
         });
     },
 
-    update(id, fromWhom, description, address, city, state, country, dateReceived, value) {
+    update(id, fromWhom, description, address, city, state, country, dateReceived, value, email, phoneNumber) {
         return new Promise((resolve, reject) => {
             volunteerApi(`/in_kinds/${id}`, {
                 type: 'patch',
-                data: { from_whome: fromWhom, description: description, address: address, city: city, state: state, country: country, date_received: dateReceived, value: value },
+                data: { from_whom: fromWhom, description: description, address: address, city: city, state: state, country: country, date_received: dateReceived, value: value, email: email, phone_number: phoneNumber },
                 success: resolve,
                 error: reject
             });
