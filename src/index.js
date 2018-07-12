@@ -42,6 +42,7 @@ import ApiAnalyticEntry from './api/analytic-entry-api';
 import ApiImage from './api/image-api';
 import ApiUnsubscribe from './api/unsubscribe-api';
 import ApiReceipt from './api/receipt-api';
+import ApiExpenditure from './api/expenditure-api';
 
 export let AuthApi = ApiAuth;
 export let CampaignApi = ApiCampaign;
@@ -55,6 +56,7 @@ export let AnalyticEntryApi = ApiAnalyticEntry;
 export let ImageApi = ApiImage;
 export let UnsubscribeApi = ApiUnsubscribe;
 export let ReceiptApi = ApiReceipt;
+export let ExpenditureApi = ApiExpenditure;
 
 
 import * as ActionsCampaign from './actions/campaign-actions';
@@ -65,6 +67,7 @@ import * as ActionsVolunteer from './actions/volunteer-actions';
 import * as ActionsAnalyticEntry from './actions/analytic-entry-actions';
 import * as ActionsImage from './actions/image-actions';
 import * as ActionsReceipt from './actions/receipt-actions';
+import * as ActionsExpenditure from './actions/expenditure-actions';
 
 export let CampaignActions = ActionsCampaign;
 export let MessageActions = ActionsMessage;
@@ -75,6 +78,7 @@ export let VolunteerActions = ActionsVolunteer;
 export let AnalyticEntryActions = ActionsAnalyticEntry;
 export let ImageActions = ActionsImage;
 export let ReceiptActions = ActionsReceipt;
+export let ExpenditureActions = ActionsExpenditure;
 
 
 import * as StaffReducers from './reducers/staff-reducer';
@@ -85,6 +89,7 @@ import * as MessageReducer from './reducers/message-reducer';
 import * as AnalyticEntryReducer from './reducers/analytic-entry-reducer';
 import * as ImageReducer from './reducers/image-reducer';
 import * as ReceiptReducer from './reducers/receipt-reducer';
+import * as ExpenditureReducer from './reducers/expenditure-reducer';
 
 export let staffReducer = StaffReducers.staffReducer;
 export let userReducer = StaffReducers.staffReducer; // call it whatever you want, I don't care
@@ -95,6 +100,7 @@ export let messageReducer = MessageReducer.messageReducer;
 export let analyticEntryReducer = AnalyticEntryReducer.analyticEntryReducer;
 export let imageReducer = ImageReducer.imageReducer;
 export let receiptReducer = ReceiptReducer.receiptReducer;
+export let expenditureReducer = ExpenditureReducer.expenditureReducer;
 
 import HelperDonor from './helpers/donor-helper';
 
