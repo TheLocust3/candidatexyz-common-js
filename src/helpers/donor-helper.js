@@ -26,9 +26,7 @@ let DonorHelper = {
     },
 
     generateDonorsInYear(receipts) {
-        let receiptsInYear = _.filter(receipts, (receipt) => { moment(receipt.dateReceived) > moment().subtract(1, 'year') });
-
-        return this.generateDonors(receiptsInYear);
+        return this.generateDonors(_.filter(receipts, (receipt) => { return moment(receipt.dateReceived) > moment().subtract(1, 'year') }));
     }
 };
 
