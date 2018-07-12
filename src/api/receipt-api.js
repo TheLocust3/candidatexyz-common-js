@@ -22,22 +22,22 @@ let ReceiptApi = {
         });
     },
 
-    create(name, amount, address, zipcode, city, state, dateReceived, occupation, employer) {
+    create(name, receiptType, amount, address, zipcode, city, state, dateReceived, occupation, employer, email, phoneNumber) {
         return new Promise((resolve, reject) => {
             volunteerApi('/receipts', {
                 type: 'post',
-                data: { name: name, amount: amount, address: address, zipcode: zipcode, city: city, state: state, date_received: dateReceived, occupation: occupation, employer: employer },
+                data: { name: name, receipt_type: receiptType, amount: amount, address: address, zipcode: zipcode, city: city, state: state, date_received: dateReceived, occupation: occupation, employer: employer, email: email, phone_number: phoneNumber },
                 success: resolve,
                 error: reject
             });
         });
     },
 
-    update(id, name, amount, address, zipcode, city, state, dateReceived, occupation, employer) {
+    update(id, name, receiptType, amount, address, zipcode, city, state, dateReceived, occupation, employer, email, phoneNumber) {
         return new Promise((resolve, reject) => {
             volunteerApi(`/receipts/${id}`, {
                 type: 'patch',
-                data: { name: name, amount: amount, address: address, zipcode: zipcode, city: city, state: state, date_received: dateReceived, occupation: occupation, employer: employer },
+                data: { name: name, receipt_type: receiptType, amount: amount, address: address, zipcode: zipcode, city: city, state: state, date_received: dateReceived, occupation: occupation, employer: employer, email: email, phone_number: phoneNumber },
                 success: resolve,
                 error: reject
             });
