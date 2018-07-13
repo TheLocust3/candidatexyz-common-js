@@ -22,6 +22,16 @@ let ReportApi = {
         });
     },
 
+    getReportTypes() {
+        return new Promise((resolve, reject) => {
+            volunteerApi('/report_types', {
+                type: 'get',
+                success: resolve,
+                error: reject
+            });
+        });
+    },
+
     create(name, reportType, beginningDate, endingDate) {
         return new Promise((resolve, reject) => {
             volunteerApi('/reports', {

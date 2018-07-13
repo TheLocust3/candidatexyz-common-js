@@ -4,6 +4,8 @@ export const REQUEST_REPORT = 'REQUEST_REPORT';
 export const RECEIVE_REPORT = 'RECEIVE_REPORT';
 export const REQUEST_ALL_REPORTS = 'REQUEST_ALL_REPORTS';
 export const RECEIVE_ALL_REPORTS = 'RECEIVE_ALL_REPORTS';
+export const REQUEST_REPORT_TYPES = 'REQUEST_REPORT_TYPES';
+export const RECEIVE_REPORT_TYPES = 'RECEIVE_REPORT_TYPES';
 
 export function requestReport() {
     return {
@@ -31,6 +33,19 @@ export function receiveAllReports(data) {
     }
 }
 
+export function requestReportTypes() {
+    return {
+        type: REQUEST_REPORT_TYPES
+    }
+}
+
+export function receiveReportTypes(data) {
+    return {
+        type: RECEIVE_REPORT_TYPES,
+        data: data
+    }
+}
+
 export function fetchAllReports() {
 
     return function (dispatch) {
@@ -49,6 +64,17 @@ export function fetchReport(id) {
 
         ReportApi.get(id).then( data => {
             dispatch(receiveReport(data));
+        });
+    }
+}
+
+export function fetchReportTypes() {
+
+    return function (dispatch) {
+        dispatch(requestReportTypes());
+
+        ReportApi.getReportTypes().then( data => {
+            dispatch(receiveReportTypes(data));
         });
     }
 }
