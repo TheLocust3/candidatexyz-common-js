@@ -1,0 +1,47 @@
+import { volunteerApi } from '../helpers';
+
+let ReportApi = {
+
+    getAll() {
+        return new Promise((resolve, reject) => {
+            volunteerApi('/reports', {
+                type: 'get',
+                success: resolve,
+                error: reject
+            });
+        });
+    },
+
+    get(id) {
+        return new Promise((resolve, reject) => {
+            volunteerApi(`/reports/${id}`, {
+                type: 'get',
+                success: resolve,
+                error: reject
+            });
+        });
+    },
+
+    create(name, reportType, beginningDate, endingDate) {
+        return new Promise((resolve, reject) => {
+            volunteerApi('/reports', {
+                type: 'post',
+                data: { name: name, report_type: reportType, beginning_date: beginningDate, ending_date: endingDate },
+                success: resolve,
+                error: reject
+            });
+        });
+    },
+
+    destroy(id) {
+        return new Promise((resolve, reject) => {
+            volunteerApi(`/reports/${id}`, {
+                type: 'delete',
+                success: resolve,
+                error: reject
+            });
+        });
+    }
+};
+
+export default ReportApi;
