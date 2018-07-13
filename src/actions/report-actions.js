@@ -37,7 +37,7 @@ export function fetchAllReports() {
         dispatch(requestAllReports());
 
         ReportApi.getAll().then( data => {
-            dispatch(receiveAllReport(data));
+            dispatch(receiveAllReports(data));
         });
     }
 }
