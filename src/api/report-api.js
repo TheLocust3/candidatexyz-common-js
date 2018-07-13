@@ -32,11 +32,11 @@ let ReportApi = {
         });
     },
 
-    create(name, reportType, beginningDate, endingDate) {
+    create(reportType, beginningDate, endingDate) {
         return new Promise((resolve, reject) => {
             volunteerApi('/reports', {
                 type: 'post',
-                data: { name: name, report_type: reportType, beginning_date: beginningDate, ending_date: endingDate },
+                data: { report_type: reportType, beginning_date: beginningDate, ending_date: endingDate },
                 success: resolve,
                 error: reject
             });
