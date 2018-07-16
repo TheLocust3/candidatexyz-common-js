@@ -16,11 +16,7 @@ class SelectItem extends React.Component {
 
 SelectItem.propTypes = {
     className: PropTypes.string,
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.element),
-        PropTypes.element,
-        PropTypes.string
-    ]).isRequired
+    children: PropTypes.any
 };
 
 export default SelectItem;
