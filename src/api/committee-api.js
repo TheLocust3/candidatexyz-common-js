@@ -22,6 +22,16 @@ let CommitteeApi = {
         });
     },
 
+    committeeByCampaign() {
+        return new Promise((resolve, reject) => {
+            volunteerApi('/committee_by_campaign', {
+                type: 'get',
+                success: resolve,
+                error: reject
+            });
+        });
+    },
+
     create(name, email, phoneNumber, address, city, state, country, office, district) {
         return new Promise((resolve, reject) => {
             volunteerApi('/committees', {

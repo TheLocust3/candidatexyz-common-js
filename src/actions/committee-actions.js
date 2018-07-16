@@ -52,3 +52,14 @@ export function fetchCommittee(id) {
         });
     }
 }
+
+export function fetchCommitteeByCampaign() {
+
+    return function (dispatch) {
+        dispatch(requestCommittee());
+
+        CommitteeApi.committeeByCampaign().then( data => {
+            dispatch(receiveCommittee(data));
+        });
+    }
+}
