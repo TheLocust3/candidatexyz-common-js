@@ -23,7 +23,7 @@ let AuthApi = {
         });
     },
 
-    editUser(email, password, passwordConfirmation, firstName, lastName) {
+    editUser(email, password, passwordConfirmation, firstName, lastName, address, phoneNumber) {
         let hash = {};
         if (!_.isEmpty(email)) {
             hash.email = email;
@@ -35,6 +35,14 @@ let AuthApi = {
 
         if (!_.isEmpty(lastName)) {
             hash.last_name = lastName;
+        }
+
+        if (!_.isEmpty(address)) {
+            hash.address = address;
+        }
+
+        if (!_.isEmpty(phoneNumber)) {
+            hash.phone_number = phoneNumber;
         }
 
         return $.auth.updateAccount(hash).then((user) => {
