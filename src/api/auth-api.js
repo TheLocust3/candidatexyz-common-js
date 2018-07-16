@@ -23,7 +23,7 @@ let AuthApi = {
         });
     },
 
-    editUser(email, password, passwordConfirmation, firstName, lastName, address, phoneNumber) {
+    editUser(email, password, passwordConfirmation, firstName, lastName, address, city, state, country, phoneNumber) {
         let hash = {};
         if (!_.isEmpty(email)) {
             hash.email = email;
@@ -39,6 +39,18 @@ let AuthApi = {
 
         if (!_.isEmpty(address)) {
             hash.address = address;
+        }
+
+        if (!_.isEmpty(city)) {
+            hash.city = city;
+        }
+
+        if (!_.isEmpty(state)) {
+            hash.state = state;
+        }
+
+        if (!_.isEmpty(country)) {
+            hash.country = country;
         }
 
         if (!_.isEmpty(phoneNumber)) {
