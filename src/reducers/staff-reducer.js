@@ -5,11 +5,13 @@ const initialState = {
     isCurrentUserReady: false,
     currentUser: {},
     user: {},
-    users: { users: [] }
+    users: { users: [] },
+    positions: { positions: [] }
 };
 
 export function staffReducer(state = initialState, action) {
     switch (action.type) {
+        case StaffActions.REQUEST_STAFF_POSITIONS:
         case StaffActions.REQUEST_USER:
         case StaffActions.REQUEST_ALL_USERS:
             return Object.assign({}, state, {
@@ -33,6 +35,11 @@ export function staffReducer(state = initialState, action) {
             return Object.assign({}, state, {
                 isReady: true,
                 users: action.data
+            });
+        case StaffActions.RECEIVE_STAFF_POSITIONS:
+            return Object.assign({}, state, {
+                isReady: true,
+                positions: action.data
             });
         default:
             return state;

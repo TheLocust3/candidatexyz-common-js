@@ -7,6 +7,8 @@ export const REQUEST_ALL_USERS = 'REQUEST_ALL_USERS';
 export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 export const REQUEST_CURRENT_USER = 'REQUEST_CURRENT_USER';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
+export const REQUEST_STAFF_POSITIONS = 'REQUEST_STAFF_POSITIONS';
+export const RECEIVE_STAFF_POSITIONS = 'RECEIVE_STAFF_POSITIONS';
 
 export function requestUser() {
     return {
@@ -47,6 +49,19 @@ export function receiveCurrentUser(data) {
     }
 }
 
+export function requestStaffPositions() {
+    return {
+        type: REQUEST_STAFF_POSITIONS
+    }
+}
+
+export function receiveStaffPositions(data) {
+    return {
+        type: RECEIVE_STAFF_POSITIONS,
+        data: data
+    }
+}
+
 export function fetchUser(identifier) {
 
     return function (dispatch) {
@@ -78,6 +93,17 @@ export function fetchCurrentUser() {
             dispatch(receiveCurrentUser(data));
         }).catch(() => {
             dispatch(receiveCurrentUser({}));
+        });
+    }
+}
+
+export function fetchStaffPositions() {
+
+    return function (dispatch) {
+        dispatch(requestStaffPositions());
+
+        StaffApi.getPositions().then( data => {
+            dispatch(receiveStaffPositions(data));
         });
     }
 }

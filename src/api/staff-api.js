@@ -23,11 +23,21 @@ let StaffApi = {
         });
     },
 
-    createToken(email) {
+    getPositions() {
+        return new Promise((resolve, reject) => {
+            userApi(`/staff_positions`, {
+                type: 'get',
+                success: resolve,
+                error: reject
+            });
+        });
+    },
+
+    createToken(email, position) {
         return new Promise((resolve, reject) => {
             userApi(`/staff/create_invite`, {
                 type: 'post',
-                data: { email: email, url: `${appDomain()}/campaign/sign-up/` },
+                data: { email: email, position: position, url: `${appDomain()}/campaign/sign-up/` },
                 success: resolve,
                 error: reject
             });
