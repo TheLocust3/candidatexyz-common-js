@@ -13,13 +13,18 @@ let AuthApi = {
         return $.auth.signOut();
     },
 
-    register(email, password, passwordConfirmation, firstName, lastName) {
+    register(email, password, passwordConfirmation, firstName, lastName, address, city, state, country, phoneNumber) {
         return $.auth.emailSignUp({
             email: email,
             password: password,
             password_confirmation: passwordConfirmation,
             first_name: firstName,
-            last_name: lastName
+            last_name: lastName,
+            address: address,
+            city: city,
+            state: state,
+            country: country,
+            phone_number: phoneNumber
         });
     },
 
