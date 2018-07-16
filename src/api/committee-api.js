@@ -1,10 +1,10 @@
-import { volunteerApi } from '../helpers';
+import { userApi } from '../helpers';
 
 let CommitteeApi = {
 
     getAll() {
         return new Promise((resolve, reject) => {
-            volunteerApi('/committees', {
+            userApi('/committees', {
                 type: 'get',
                 success: resolve,
                 error: reject
@@ -14,7 +14,7 @@ let CommitteeApi = {
 
     get(id) {
         return new Promise((resolve, reject) => {
-            volunteerApi(`/committees/${id}`, {
+            userApi(`/committees/${id}`, {
                 type: 'get',
                 success: resolve,
                 error: reject
@@ -24,7 +24,7 @@ let CommitteeApi = {
 
     committeeByCampaign() {
         return new Promise((resolve, reject) => {
-            volunteerApi('/committee_by_campaign', {
+            userApi('/committee_by_campaign', {
                 type: 'get',
                 success: resolve,
                 error: reject
@@ -34,7 +34,7 @@ let CommitteeApi = {
 
     create(name, email, phoneNumber, address, city, state, country, office, district) {
         return new Promise((resolve, reject) => {
-            volunteerApi('/committees', {
+            userApi('/committees', {
                 type: 'post',
                 data: { name: name, email: email, phone_number: phoneNumber, address: address, city: city, state: state, country: country, office: office, district: district },
                 success: resolve,
@@ -45,7 +45,7 @@ let CommitteeApi = {
 
     update(id, name, email, phoneNumber, address, city, state, country, office, district) {
         return new Promise((resolve, reject) => {
-            volunteerApi(`/committees/${id}`, {
+            userApi(`/committees/${id}`, {
                 type: 'patch',
                 data: { name: name, email: email, phone_number: phoneNumber, address: address, city: city, state: state, country: country, office: office, district: district },
                 success: resolve,
@@ -56,7 +56,7 @@ let CommitteeApi = {
 
     destroy(id) {
         return new Promise((resolve, reject) => {
-            volunteerApi(`/committees/${id}`, {
+            userApi(`/committees/${id}`, {
                 type: 'delete',
                 success: resolve,
                 error: reject
