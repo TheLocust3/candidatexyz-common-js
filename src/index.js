@@ -94,7 +94,7 @@ export let ExpenditureActions = ActionsExpenditure;
 export let InKindActions = ActionsInKind;
 export let LiabilityActions = ActionsLiability;
 export let ReportActions = ActionsReport;
-export let ReportCommittee = ActionsCommittee;
+export let CommitteeActions = ActionsCommittee;
 
 
 import * as StaffReducers from './reducers/staff-reducer';
