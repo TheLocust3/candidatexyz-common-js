@@ -31,7 +31,7 @@ export function reportReducer(state = initialState, action) {
             });
         case ReportActions.RECEIVE_REPORT_TYPES:
             return Object.assign({}, state, {
-                isReady: true,
+                areReportTypesReady: true,
                 reportTypes: action.data
             });
         default:
