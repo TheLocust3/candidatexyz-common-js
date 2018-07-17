@@ -32,22 +32,22 @@ let CommitteeApi = {
         });
     },
 
-    create(name, email, phoneNumber, address, city, state, country, office, district) {
+    create(name, email, phoneNumber, address, city, state, country, office, district, bank) {
         return new Promise((resolve, reject) => {
             userApi('/committees', {
                 type: 'post',
-                data: { name: name, email: email, phone_number: phoneNumber, address: address, city: city, state: state, country: country, office: office, district: district },
+                data: { name: name, email: email, phone_number: phoneNumber, address: address, city: city, state: state, country: country, office: office, district: district, bank: bank },
                 success: resolve,
                 error: reject
             });
         });
     },
 
-    update(id, name, email, phoneNumber, address, city, state, country, office, district) {
+    update(id, name, email, phoneNumber, address, city, state, country, office, district, bank) {
         return new Promise((resolve, reject) => {
             userApi(`/committees/${id}`, {
                 type: 'patch',
-                data: { name: name, email: email, phone_number: phoneNumber, address: address, city: city, state: state, country: country, office: office, district: district },
+                data: { name: name, email: email, phone_number: phoneNumber, address: address, city: city, state: state, country: country, office: office, district: district, bank: bank },
                 success: resolve,
                 error: reject
             });

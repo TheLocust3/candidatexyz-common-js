@@ -32,11 +32,11 @@ let CampaignApi = {
         });
     },
 
-    update(id, name, url, electionDay, preliminaryDay, bank) {
+    update(id, name, url, electionDay, preliminaryDay) {
         return new Promise((resolve, reject) => {
             userApi(`/campaigns/${id}`, {
                 type: 'patch',
-                data: { name: name, url: url, election_day: electionDay, preliminary_day: preliminaryDay, bank: bank },
+                data: { name: name, url: url, election_day: electionDay, preliminary_day: preliminaryDay },
                 success: resolve,
                 error: reject
             });
