@@ -127,5 +127,7 @@ export let reportReducer = ReportReducer.reportReducer;
 export let committeeReducer = CommitteeReducer.committeeReducer;
 
 import HelperDonor from './helpers/donor-helper';
+import HelperReport from './helpers/report-helper';
 
 export let DonorHelper = HelperDonor;
+export let ReportHelper = HelperReport;
