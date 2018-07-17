@@ -1,7 +1,8 @@
+import _ from 'lodash';
 import moment from 'moment';
 
 let ReportHelper = {
-    
+
     generateReportType(reportType, campaign) {
         let newReportType = _.clone(reportType);
 
@@ -25,6 +26,12 @@ let ReportHelper = {
         }
 
         return newReportType;
+    },
+
+    lastOfficialReport(reportType, reports) {
+        return _.filter(_.reverse(_.sortBy(reports, (report) => { return report.createdAt })), (report) => {
+            return report.official;
+        })[0];
     }
 }
 
