@@ -28,9 +28,9 @@ let ReportHelper = {
         return newReportType;
     },
 
-    lastOfficialReport(reports) {
+    lastOfficialReport(reports, reportClass) {
         return _.filter(_.reverse(_.sortBy(reports, (report) => { return report.createdAt })), (report) => {
-            return report.official;
+            return report.official && report.reportClass == reportClass;
         })[0];
     }
 }
