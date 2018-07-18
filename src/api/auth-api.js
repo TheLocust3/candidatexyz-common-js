@@ -13,7 +13,7 @@ let AuthApi = {
         return $.auth.signOut();
     },
 
-    register(email, password, passwordConfirmation, firstName, lastName, address, city, state, country, phoneNumber) {
+    register(email, password, passwordConfirmation, firstName, lastName, address, city, state, country, phoneNumber, party) {
         return $.auth.emailSignUp({
             email: email,
             password: password,
@@ -24,11 +24,12 @@ let AuthApi = {
             city: city,
             state: state,
             country: country,
-            phone_number: phoneNumber
+            phone_number: phoneNumber,
+            party: party
         });
     },
 
-    editUser(email, password, passwordConfirmation, firstName, lastName, address, city, state, country, phoneNumber) {
+    editUser(email, password, passwordConfirmation, firstName, lastName, address, city, state, country, phoneNumber, party) {
         let hash = {};
         if (!_.isEmpty(email)) {
             hash.email = email;
@@ -60,6 +61,10 @@ let AuthApi = {
 
         if (!_.isEmpty(phoneNumber)) {
             hash.phone_number = phoneNumber;
+        }
+
+        if (!_.isEmpty(party)) {
+            hash.party = party;
         }
 
         return $.auth.updateAccount(hash).then((user) => {
