@@ -13,7 +13,7 @@ let AuthApi = {
         return $.auth.signOut();
     },
 
-    register(email, password, passwordConfirmation, firstName, lastName, address, city, state, country, phoneNumber, party) {
+    register(email, password, passwordConfirmation, firstName, lastName, address, city, state, country, zipcode, phoneNumber, party) {
         return $.auth.emailSignUp({
             email: email,
             password: password,
@@ -24,12 +24,13 @@ let AuthApi = {
             city: city,
             state: state,
             country: country,
+            zipcode: zipcode,
             phone_number: phoneNumber,
             party: party
         });
     },
 
-    editUser(email, password, passwordConfirmation, firstName, lastName, address, city, state, country, phoneNumber, party) {
+    editUser(email, password, passwordConfirmation, firstName, lastName, address, city, state, country, zipcode, phoneNumber, party) {
         let hash = {};
         if (!_.isEmpty(email)) {
             hash.email = email;
@@ -57,6 +58,10 @@ let AuthApi = {
 
         if (!_.isEmpty(country)) {
             hash.country = country;
+        }
+
+        if (!_.isEmpty(zipcode)) {
+            hash.zipcode = zipcode;
         }
 
         if (!_.isEmpty(phoneNumber)) {

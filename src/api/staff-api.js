@@ -44,22 +44,22 @@ let StaffApi = {
         });
     },
 
-    create(token, email, firstName, lastName, password, passwordConfirmation, address, city, state, country, phoneNumber, party) {
+    create(token, email, firstName, lastName, password, passwordConfirmation, address, city, state, country, zipcode, phoneNumber, party) {
         return new Promise((resolve, reject) => {
             userApi(`/staff`, {
                 type: 'post',
-                data: { token: token, email: email, first_name: firstName, last_name: lastName, password: password, password_confirmation: passwordConfirmation, address: address, city: city, state: state, country: country, phone_number: phoneNumber, party: party },
+                data: { token: token, email: email, first_name: firstName, last_name: lastName, password: password, password_confirmation: passwordConfirmation, address: address, city: city, state: state, country: country, zipcode: zipcode, phone_number: phoneNumber, party: party },
                 success: resolve,
                 error: reject
             });
         });
     },
 
-    update(id, email, firstName, lastName, admin, position, address, city, state, country, phoneNumber, party) {
+    update(id, email, firstName, lastName, admin, position, address, city, state, country, phoneNumber, zipcode, party) {
         return new Promise((resolve, reject) => {
             userApi(`/staff/${id}`, {
                 type: 'patch',
-                data: { email: email, first_name: firstName, last_name: lastName, admin: admin, position: position, address: address, city: city, state: state, country: country, phone_number: phoneNumber, party: party },
+                data: { email: email, first_name: firstName, last_name: lastName, admin: admin, position: position, address: address, city: city, state: state, country: country, zipcode: zipcode, phone_number: phoneNumber, party: party },
                 success: resolve,
                 error: reject
             });
