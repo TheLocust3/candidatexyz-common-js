@@ -55,7 +55,7 @@ let StaffApi = {
         });
     },
 
-    update(id, email, firstName, lastName, admin, position, address, city, state, country, phoneNumber, zipcode, party) {
+    update(id, email, firstName, lastName, admin, position, address, city, state, country, zipcode, phoneNumber, party) {
         return new Promise((resolve, reject) => {
             userApi(`/staff/${id}`, {
                 type: 'patch',
