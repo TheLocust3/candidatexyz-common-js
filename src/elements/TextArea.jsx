@@ -41,7 +41,7 @@ export default class TextField extends React.Component {
 
         return (
             <div id={this.state.uuid} className={`mdc-text-field mdc-text-field--textarea ${className}`} data-mdc-auto-init='MDCTextField' style={style}>
-                <textarea type='text' name={name} className='mdc-text-field__input mdc-typography--body2' onChange={onChange} value={value} rows={rows} cols={cols} required={required} />
+                <textarea type='text' name={name} className='mdc-text-field__input mdc-typography--body2' onChange={onChange} value={value} rows={rows} cols={cols} required={required} {...props} />
 
                 <label className='mdc-floating-label'><Text type='body2'>{label}</Text></label>
 
