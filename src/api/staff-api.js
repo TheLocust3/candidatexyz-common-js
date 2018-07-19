@@ -33,6 +33,16 @@ let StaffApi = {
         });
     },
 
+    getInvite(token) {
+        return new Promise((resolve, reject) => {
+            userApi(`/staff/get_invite?token=${token}`, {
+                type: 'get',
+                success: resolve,
+                error: reject
+            });
+        });
+    },
+
     createToken(email, position) {
         return new Promise((resolve, reject) => {
             userApi(`/staff/create_invite`, {
