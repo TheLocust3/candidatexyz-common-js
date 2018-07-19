@@ -53,3 +53,12 @@ export function addAuthHeaders(xhr) { // attach authentication headers to reques
         xhr.setRequestHeader(key, currentHeaders[key]);
     }
 }
+
+export function createAuthHeadersString() {
+    str = '';
+    for (var key in $.auth.getConfig().tokenFormat) {
+        str += `${key}=${currentHeaders[key]}&`;
+    }
+
+    return str;
+}

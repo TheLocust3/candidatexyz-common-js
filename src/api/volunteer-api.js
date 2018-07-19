@@ -1,4 +1,4 @@
-import { volunteerApi } from '../helpers';
+import { volunteerApi, createAuthHeadersString } from '../helpers';
 import { volunteerApiDomain } from '../constants';
 
 let VolunteerApi = {
@@ -76,7 +76,7 @@ let VolunteerApi = {
     },
 
     exportLink() {
-        return `${volunteerApiDomain()}/volunteers/export`;
+        return `${volunteerApiDomain()}/volunteers/export?${createAuthHeadersString()}`;
     }
 };
 
