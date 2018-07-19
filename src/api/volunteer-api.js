@@ -76,7 +76,7 @@ let VolunteerApi = {
     },
 
     exportLink() {
-        return `${volunteerApiDomain()}/volunteers/export?${createAuthHeadersString()}`;
+        return `${volunteerApiDomain()}/volunteers/export.csv?${createAuthHeadersString()}`;
     }
 };
 
