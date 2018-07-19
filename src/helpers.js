@@ -55,7 +55,7 @@ export function addAuthHeaders(xhr) { // attach authentication headers to reques
 }
 
 export function createAuthHeadersString() {
-    str = '';
+    let str = '';
     for (var key in $.auth.getConfig().tokenFormat) {
         str += `${key}=${currentHeaders[key]}&`;
     }
