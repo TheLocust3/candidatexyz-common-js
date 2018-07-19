@@ -107,3 +107,14 @@ export function fetchStaffPositions() {
         });
     }
 }
+
+export function fetchInvitedUser(token) {
+
+    return function (dispatch) {
+        dispatch(requestUser());
+
+        StaffApi.get_invite(token).then( data => {
+            dispatch(receiveUser(data));
+        });
+    }
+}
