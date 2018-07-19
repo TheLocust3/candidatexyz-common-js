@@ -1,4 +1,5 @@
-import { volunteerApi } from '../helpers';
+import { volunteerApi, createAuthHeadersString } from '../helpers';
+import { volunteerApiDomain } from '../constants';
 
 let ContactApi = {
 
@@ -52,6 +53,10 @@ let ContactApi = {
                 error: reject
             });
         });
+    },
+
+    exportLink() {
+        return `${volunteerApiDomain()}/contacts/export.csv?${createAuthHeadersString()}`;
     }
 };
 

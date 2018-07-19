@@ -1,4 +1,5 @@
-import { volunteerApi } from '../helpers';
+import { volunteerApi, createAuthHeadersString } from '../helpers';
+import { volunteerApiDomain } from '../constants';
 
 let InKindApi = {
 
@@ -52,6 +53,10 @@ let InKindApi = {
                 error: reject
             });
         });
+    },
+
+    exportLink() {
+        return `${volunteerApiDomain()}/in_kinds/export.csv?${createAuthHeadersString()}`;
     }
 };
 

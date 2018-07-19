@@ -1,4 +1,5 @@
-import { volunteerApi } from '../helpers';
+import { volunteerApi, createAuthHeadersString } from '../helpers';
+import { volunteerApiDomain } from '../constants';
 
 let LiabilityApi = {
 
@@ -52,6 +53,10 @@ let LiabilityApi = {
                 error: reject
             });
         });
+    },
+
+    exportLink() {
+        return `${volunteerApiDomain()}/liabilities/export.csv?${createAuthHeadersString()}`;
     }
 };
 
