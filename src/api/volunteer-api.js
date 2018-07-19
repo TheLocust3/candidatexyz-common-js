@@ -76,7 +76,7 @@ let VolunteerApi = {
     },
 
     exportLink() {
-        return `${volunteerApiDomain}/volunteers/export`;
+        return `${volunteerApiDomain()}/volunteers/export`;
     }
 };
 
