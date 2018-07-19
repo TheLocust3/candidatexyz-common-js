@@ -75,7 +75,7 @@ let VolunteerApi = {
     },
 
     exportLink() {
-        return volunteerApi('/volunteers/export');
+        return volunteerApi('/volunteers/export', {});
     }
 };
 
