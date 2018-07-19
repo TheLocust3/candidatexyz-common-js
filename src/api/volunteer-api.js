@@ -1,4 +1,5 @@
 import { volunteerApi } from '../helpers';
+import { volunteerApiDomain } from '../constants';
 
 let VolunteerApi = {
 
@@ -75,7 +76,7 @@ let VolunteerApi = {
     },
 
     exportLink() {
-        return volunteerApi('/volunteers/export', {});
+        return `${volunteerApiDomain}/volunteers/export`;
     }
 };
 
