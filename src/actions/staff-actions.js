@@ -113,7 +113,7 @@ export function fetchInvitedUser(token) {
     return function (dispatch) {
         dispatch(requestUser());
 
-        StaffApi.get_invite(token).then( data => {
+        StaffApi.getInvite(token).then( data => {
             dispatch(receiveUser(data));
         });
     }
