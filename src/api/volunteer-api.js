@@ -72,6 +72,10 @@ let VolunteerApi = {
                 error: reject
             });
         });
+    },
+
+    exportLink() {
+        return volunteerApi('/volunteers/export');
     }
 };
 
