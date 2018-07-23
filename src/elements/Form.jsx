@@ -32,7 +32,7 @@ export default class Form extends React.Component {
         let { handleSubmit, errors, top, children, ...props } = this.props;
 
         return (
-            <form onSubmit={this.handleSubmit.bind(this)} {...props}>
+            <form className='form' onSubmit={this.handleSubmit.bind(this)} {...props}>
                 {top ? this.renderErrors() : ''}
 
                 {children}
