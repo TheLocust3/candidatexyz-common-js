@@ -15,7 +15,7 @@ let StaffApi = {
 
     getAllWithPositions() {
         return new Promise((resolve, reject) => {
-            userApi('/campaigns/users_with_committee_positions', {
+            userApi('/users/users_with_committee_positions', {
                 type: 'get',
                 success: resolve,
                 error: reject
