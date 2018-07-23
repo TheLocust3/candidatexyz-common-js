@@ -84,6 +84,17 @@ export function fetchAllUsers() {
     }
 }
 
+export function fetchAllUsersWithPositions() {
+
+    return function (dispatch) {
+        dispatch(requestAllUsers());
+
+        StaffApi.getAllWithPositions().then( data => {
+            dispatch(receiveAllUsers(data));
+        });
+    }
+}
+
 export function fetchCurrentUser() {
 
     return function (dispatch) {

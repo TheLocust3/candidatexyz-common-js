@@ -13,6 +13,16 @@ let StaffApi = {
         });
     },
 
+    getAllWithPositions() {
+        return new Promise((resolve, reject) => {
+            userApi('/campaigns/users_with_committee_positions', {
+                type: 'get',
+                success: resolve,
+                error: reject
+            });
+        });
+    },
+    
     get(id) {
         return new Promise((resolve, reject) => {
             userApi(`/staff/${id}`, {
