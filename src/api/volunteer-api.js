@@ -47,7 +47,7 @@ let VolunteerApi = {
         return new Promise((resolve, reject) => {
             volunteerApi('/volunteers', {
                 type: 'post',
-                data: { email: email, phone_number: phoneNumber, first_name: firstName, last_name: lastName, address: address, zipcode: zipCode, city: city, state: state, help_blurb: helpBlurb },
+                data: { email: email, phone_number: phoneNumber, first_name: firstName, last_name: lastName, address: address, zipcode: zipCode, city: city, state: state, help_blurb: helpBlurb, no_notify: true },
                 success: resolve,
                 error: reject
             });
