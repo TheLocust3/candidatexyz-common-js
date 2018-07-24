@@ -47,6 +47,7 @@ import ApiInKind from './api/in-kind-api';
 import ApiLiability from './api/liability-api';
 import ApiReport from './api/report-api';
 import ApiCommittee from './api/committee-api';
+import ApiNotification from './api/notification-api';
 
 export let AuthApi = ApiAuth;
 export let CampaignApi = ApiCampaign;
@@ -65,6 +66,7 @@ export let InKindApi = ApiInKind;
 export let LiabilityApi = ApiLiability;
 export let ReportApi = ApiReport;
 export let CommitteeApi = ApiCommittee;
+export let NotificationApi = ApiNotification;
 
 
 import * as ActionsCampaign from './actions/campaign-actions';
@@ -80,6 +82,7 @@ import * as ActionsInKind from './actions/in-kind-actions';
 import * as ActionsLiability from './actions/liability-actions';
 import * as ActionsReport from './actions/report-actions';
 import * as ActionsCommittee from './actions/committee-actions';
+import * as ActionsNotification from './actions/notification-actions';
 
 export let CampaignActions = ActionsCampaign;
 export let MessageActions = ActionsMessage;
@@ -95,6 +98,7 @@ export let InKindActions = ActionsInKind;
 export let LiabilityActions = ActionsLiability;
 export let ReportActions = ActionsReport;
 export let CommitteeActions = ActionsCommittee;
+export let NotificationActions = ActionsNotification;
 
 
 import * as StaffReducers from './reducers/staff-reducer';
@@ -110,6 +114,7 @@ import * as InKindReducer from './reducers/in-kind-reducer';
 import * as LiabilityReducer from './reducers/liability-reducer';
 import * as ReportReducer from './reducers/report-reducer';
 import * as CommitteeReducer from './reducers/committee-reducer';
+import * as NotificationReducer from './reducers/notification-reducer';
 
 export let staffReducer = StaffReducers.staffReducer;
 export let userReducer = StaffReducers.staffReducer; // call it whatever you want, I don't care
@@ -125,6 +130,7 @@ export let inKindReducer = InKindReducer.inKindReducer;
 export let liabilityReducer = LiabilityReducer.liabilityReducer;
 export let reportReducer = ReportReducer.reportReducer;
 export let committeeReducer = CommitteeReducer.committeeReducer;
+export let notificationReducer = NotificationReducer.notificationReducer;
 
 import HelperDonor from './helpers/donor-helper';
 import HelperReport from './helpers/report-helper';
