@@ -22,22 +22,22 @@ let NotificationApi = {
         });
     },
 
-    create(title, body, campaignId, userId) {
+    create(title, body, link, campaignId, userId) {
         return new Promise((resolve, reject) => {
             volunteerApi('/notifications', {
                 type: 'post',
-                data: { title: title, body: body, campaign_id: campaignId, user_id: userId },
+                data: { title: title, body: body, link: link, campaign_id: campaignId, user_id: userId },
                 success: resolve,
                 error: reject
             });
         });
     },
 
-    update(id, title, body, campaignId, userId) {
+    update(id, read) {
         return new Promise((resolve, reject) => {
             volunteerApi(`/notifications/${id}`, {
                 type: 'patch',
-                data: { title: title, body: body, campaign_id: campaignId, user_id: userId },
+                data: { read: read },
                 success: resolve,
                 error: reject
             });
