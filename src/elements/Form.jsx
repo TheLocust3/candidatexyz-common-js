@@ -48,9 +48,5 @@ Form.propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     errors: PropTypes.object,
     top: PropTypes.bool,
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.element),
-        PropTypes.element,
-        PropTypes.string
-    ]).isRequired
+    children: PropTypes.any.isRequired
 };

@@ -35,9 +35,5 @@ Button.propTypes = {
     className: PropTypes.string,
     flat: PropTypes.bool,
     condensed: PropTypes.bool,
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.element),
-        PropTypes.element,
-        PropTypes.string
-    ]).isRequired
+    children: PropTypes.any.isRequired
 };

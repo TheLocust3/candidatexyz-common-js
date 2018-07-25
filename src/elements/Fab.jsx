@@ -35,9 +35,5 @@ Fab.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
     condensed: PropTypes.bool,
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.element),
-        PropTypes.element,
-        PropTypes.string
-    ]).isRequired
+    children: PropTypes.any.isRequired
 };

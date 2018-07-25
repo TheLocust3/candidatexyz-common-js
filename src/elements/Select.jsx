@@ -59,8 +59,5 @@ Select.propTypes = {
     onChange: PropTypes.func.isRequired,
     selectedIndex: PropTypes.number,
     required: PropTypes.bool,
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.element),
-        PropTypes.element
-    ]).isRequired
+    children: PropTypes.any.isRequired
 };
