@@ -75,6 +75,17 @@ let StaffApi = {
         });
     },
 
+    updateCampaignId(id, campaignId) {
+        return new Promise((resolve, reject) => {
+            userApi(`/staff/${id}/campaign_id`, {
+                type: 'patch',
+                data: { campaign_id: campaignId },
+                success: resolve,
+                error: reject
+            });
+        });
+    },
+
     update(id, email, firstName, lastName, admin, position, address, city, state, country, zipcode, phoneNumber, party) {
         return new Promise((resolve, reject) => {
             userApi(`/staff/${id}`, {

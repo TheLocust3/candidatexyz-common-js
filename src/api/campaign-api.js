@@ -43,17 +43,6 @@ let CampaignApi = {
         });
     },
 
-    updateCampaignId(id, campaignId) {
-        return new Promise((resolve, reject) => {
-            userApi(`/campaigns/${id}/campaign_id`, {
-                type: 'patch',
-                data: { campaign_id: campaignId },
-                success: resolve,
-                error: reject
-            });
-        });
-    },
-
     update(id, name, url, electionDay, preliminaryDay) {
         return new Promise((resolve, reject) => {
             userApi(`/campaigns/${id}`, {
