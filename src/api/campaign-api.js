@@ -32,6 +32,17 @@ let CampaignApi = {
         });
     },
 
+    create(name, url, electionDay, preliminaryDay) {
+        return new Promise((resolve, reject) => {
+            userApi('/campaigns', {
+                type: 'post',
+                data: { name: name, url: url, election_day: electionDay, preliminary_day: preliminaryDay },
+                success: resolve,
+                error: reject
+            });
+        });
+    },
+
     update(id, name, url, electionDay, preliminaryDay) {
         return new Promise((resolve, reject) => {
             userApi(`/campaigns/${id}`, {
