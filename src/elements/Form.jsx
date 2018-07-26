@@ -18,11 +18,17 @@ export default class Form extends React.Component {
         return (
             <Text type='caption'>
                 {_.map(this.props.errors, (errorMessage, errorName) => {
-                    return (
+                    if (_.isEmpty(errorName)) {
                         <div key={errorName}>
-                            {_.capitalize(errorName)} {_.lowerCase(_.join(errorMessage, ', '))}
+                            {_.capitalize(_.join(errorMessage, ', '))}
                         </div>
-                    )
+                    } else {
+                        return (
+                            <div key={errorName}>
+                                {_.capitalize(errorName)} {_.lowerCase(_.join(errorMessage, ', '))}
+                            </div>
+                        );
+                    }
                 })}
             </Text>
         )
