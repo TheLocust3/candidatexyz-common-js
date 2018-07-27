@@ -4,7 +4,7 @@ let DonorApi = {
 
     getAll() {
         return new Promise((resolve, reject) => {
-            volunteerApi('/receipts', {
+            volunteerApi('/donors', {
                 type: 'get',
                 success: resolve,
                 error: reject
@@ -14,7 +14,7 @@ let DonorApi = {
 
     get(id) {
         return new Promise((resolve, reject) => {
-            volunteerApi(`/receipts/${id}`, {
+            volunteerApi(`/donors/${id}`, {
                 type: 'get',
                 success: resolve,
                 error: reject
