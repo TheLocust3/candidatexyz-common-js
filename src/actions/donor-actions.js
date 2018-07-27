@@ -42,12 +42,12 @@ export function fetchAllDonors() {
     }
 }
 
-export function fetchDonor(id) {
+export function fetchDonor(name) {
 
     return function (dispatch) {
         dispatch(requestDonor());
 
-        DonorApi.get(id).then( data => {
+        DonorApi.get(name).then( data => {
             dispatch(receiveDonor(data));
         });
     }

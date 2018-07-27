@@ -12,9 +12,9 @@ let DonorApi = {
         });
     },
 
-    get(id) {
+    get(name) {
         return new Promise((resolve, reject) => {
-            volunteerApi(`/donors/${id}`, {
+            volunteerApi(`/donors/${name}`, {
                 type: 'get',
                 success: resolve,
                 error: reject
