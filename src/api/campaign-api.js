@@ -32,22 +32,22 @@ let CampaignApi = {
         });
     },
 
-    create(name, url, electionDay, preliminaryDay) {
+    create(name, url, electionDay, preliminaryDay, city, state, country, officeType) {
         return new Promise((resolve, reject) => {
             userApi('/campaigns', {
                 type: 'post',
-                data: { name: name, url: url, election_day: electionDay, preliminary_day: preliminaryDay },
+                data: { name: name, url: url, election_day: electionDay, preliminary_day: preliminaryDay, city: city, state: state, country: country, office_type: officeType },
                 success: resolve,
                 error: reject
             });
         });
     },
 
-    update(id, name, url, electionDay, preliminaryDay) {
+    update(id, name, url, electionDay, preliminaryDay, city, state, country, officeType) {
         return new Promise((resolve, reject) => {
             userApi(`/campaigns/${id}`, {
                 type: 'patch',
-                data: { name: name, url: url, election_day: electionDay, preliminary_day: preliminaryDay },
+                data: { name: name, url: url, election_day: electionDay, preliminary_day: preliminaryDay, city: city, state: state, country: country, office_type: officeType },
                 success: resolve,
                 error: reject
             });
