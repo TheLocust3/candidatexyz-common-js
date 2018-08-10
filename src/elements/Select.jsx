@@ -32,12 +32,12 @@ export default class Select extends React.Component {
     }
 
     render() {
-        let { className, label, onChange, selectedIndex, required, children, ...props } = this.props;
+        let { className, label, onChange, selectedIndex, required, disabled, children, ...props } = this.props;
         className = _.isEmpty(className) ? '' : className;
 
         return (
             <div className={`mdc-select ${className}`} id={this.state.uuid} role='listbox' data-mdc-auto-init='MDCSelect' {...props}>
-                <select onChange={(event) => { this.props.onChange(event.target) }} className='mdc-select__native-control mdc-typography--body2' required={required}>
+                <select onChange={(event) => { this.props.onChange(event.target) }} className='mdc-select__native-control mdc-typography--body2' required={required} disabled={disabled}>
                     {children}
                 </select>
 
@@ -59,5 +59,6 @@ Select.propTypes = {
     onChange: PropTypes.func.isRequired,
     selectedIndex: PropTypes.number,
     required: PropTypes.bool,
+    disabled: PropTypes.bool,
     children: PropTypes.any.isRequired
 };
